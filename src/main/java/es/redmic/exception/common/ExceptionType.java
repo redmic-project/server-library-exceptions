@@ -28,6 +28,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	PASSWORD_NOT_MATCH(Constants.PASSWORD_NOT_MATCH),
 	RESET_PASSWORD_TIMEOUT(Constants.RESET_PASSWORD_TIMEOUT),
 	TOKEN_NOT_FOUND(Constants.TOKEN_NOT_FOUND),
+	RECAPTCHA_NOT_VALID(Constants.RECAPTCHA_NOT_VALID),
 	
 	// Security
 	NOT_ALLOWED_EXCEPTION(Constants.NOT_ALLOWED_EXCEPTION),
@@ -160,6 +161,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			PASSWORD_NOT_MATCH = "PasswordNotMatch",
 			RESET_PASSWORD_TIMEOUT = "ResetPasswordTimeOut",
 			TOKEN_NOT_FOUND = "TokenNotFound",
+			RECAPTCHA_NOT_VALID = "RecaptchaNotValid",
 
 			// Security
 			NOT_ALLOWED_EXCEPTION = "NotAllowedException",
