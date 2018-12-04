@@ -12,6 +12,7 @@ import es.redmic.exception.data.DeleteItemException;
 import es.redmic.exception.data.ItemAlreadyExistException;
 import es.redmic.exception.data.ItemNotFoundException;
 import es.redmic.exception.elasticsearch.ESInsertException;
+import es.redmic.exception.elasticsearch.ESUpdateException;
 
 public class ExceptionFactory {
 
@@ -33,6 +34,12 @@ public class ExceptionFactory {
 		if (exceptionType.equals(ExceptionType.ES_INSERT_DOCUMENT.name())
 				&& (arguments != null && arguments.size() == 4))
 			return new ESInsertException("a", "b");
+
+		if (exceptionType.equals(ExceptionType.ES_UPDATE_DOCUMENT.name()) && (arguments != null))
+			return new ESUpdateException("a");
+
+		if (exceptionType.equals(ExceptionType.INTERNAL_EXCEPTION.name()) && (arguments == null))
+			return new InternalException(ExceptionType.INTERNAL_EXCEPTION);
 
 		logger.error("No se ha encontrado una excepción válida para el tipo y argumentos recibidos");
 
