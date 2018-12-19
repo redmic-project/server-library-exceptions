@@ -53,6 +53,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	ES_HISTOGRAM_INTERVAL_QUERY_ERROR(Constants.ES_HISTOGRAM_INTERVAL_QUERY_ERROR),
 	ES_TERM_QUERY_ERROR(Constants.ES_TERM_QUERY_ERROR),
 	ES_INSERT_DOCUMENT(Constants.ES_INSERT_DOCUMENT),
+	ES_CREATE_MAPPING_ERROR(Constants.ES_CREATE_MAPPING_ERROR),
 	
 	// DTOs
 	DTO_NOT_VALID(Constants.DTO_NOT_VALID),
@@ -186,6 +187,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			ES_HISTOGRAM_INTERVAL_QUERY_ERROR = "ESHistogramIntervalQueryError",
 			ES_TERM_QUERY_ERROR = "ESTermQueryError",
 			ES_INSERT_DOCUMENT = "ESInsertError",
+			ES_CREATE_MAPPING_ERROR = "ESCreateMappingError",
 			
 			// DTOs
 			DTO_NOT_VALID = "DTONotValidException",
