@@ -52,6 +52,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	ES_BBOX_QUERY_ERROR(Constants.ES_BBOX_QUERY_ERROR),
 	ES_HISTOGRAM_INTERVAL_QUERY_ERROR(Constants.ES_HISTOGRAM_INTERVAL_QUERY_ERROR),
 	ES_TERM_QUERY_ERROR(Constants.ES_TERM_QUERY_ERROR),
+	ES_QUERY_ERROR(Constants.ES_QUERY_ERROR),
 	ES_INSERT_DOCUMENT(Constants.ES_INSERT_DOCUMENT),
 	ES_CREATE_MAPPING_ERROR(Constants.ES_CREATE_MAPPING_ERROR),
 	
@@ -186,6 +187,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			ES_BBOX_QUERY_ERROR = "ESBboxQueryError",
 			ES_HISTOGRAM_INTERVAL_QUERY_ERROR = "ESHistogramIntervalQueryError",
 			ES_TERM_QUERY_ERROR = "ESTermQueryError",
+			ES_QUERY_ERROR = "ESQueryError",
 			ES_INSERT_DOCUMENT = "ESInsertError",
 			ES_CREATE_MAPPING_ERROR = "ESCreateMappingError",
 			
