@@ -109,7 +109,9 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	JOB_RUNNING_STEP_NOT_ALLOWED(Constants.JOB_RUNNING_STEP_NOT_ALLOWED),
 	JOB_COMPLETED_STEP_NOT_ALLOWED(Constants.JOB_COMPLETED_STEP_NOT_ALLOWED),
 	
-	REPORT_ERROR(Constants.REPORT_ERROR);
+	REPORT_ERROR(Constants.REPORT_ERROR),
+	
+	NO_CONTENT(Constants.NO_CONTENT);
 	
 	// @formatter:on
 
@@ -244,7 +246,9 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			JOB_RUNNING_STEP_NOT_ALLOWED = "JobRunningStepNotAllowed",
 			JOB_COMPLETED_STEP_NOT_ALLOWED = "JobCompletedStepNotAllowed",
 			
-			REPORT_ERROR = "ReportError";
+			REPORT_ERROR = "ReportError",
+		
+			NO_CONTENT = "NoContentException";
 		// @formatter:on
 	}
 
