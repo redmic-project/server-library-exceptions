@@ -76,6 +76,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	ES_INSERT_DOCUMENT(Constants.ES_INSERT_DOCUMENT),
 	ES_CREATE_MAPPING_ERROR(Constants.ES_CREATE_MAPPING_ERROR),
 	ES_DELETE_ITEM_WITH_CHILDREN_ERROR(Constants.ES_DELETE_ITEM_WITH_CHILDREN_ERROR),
+	ES_PARENT_NOT_EXIST_ERROR(Constants.ES_PARENT_NOT_EXIST_ERROR),
 	
 	// DTOs
 	DTO_NOT_VALID(Constants.DTO_NOT_VALID),
@@ -215,6 +216,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			ES_INSERT_DOCUMENT = "ESInsertError",
 			ES_CREATE_MAPPING_ERROR = "ESCreateMappingError",
 			ES_DELETE_ITEM_WITH_CHILDREN_ERROR = "ESDeleteItemWithChildrenError",
+			ES_PARENT_NOT_EXIST_ERROR = "ESParentNotExistError",
 			
 			// DTOs
 			DTO_NOT_VALID = "DTONotValidException",

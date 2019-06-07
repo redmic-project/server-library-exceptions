@@ -33,6 +33,7 @@ import es.redmic.exception.data.ItemAlreadyExistException;
 import es.redmic.exception.data.ItemNotFoundException;
 import es.redmic.exception.elasticsearch.ESDeleteItemWithChildrenException;
 import es.redmic.exception.elasticsearch.ESInsertException;
+import es.redmic.exception.elasticsearch.ESParentNotExistException;
 import es.redmic.exception.elasticsearch.ESUpdateException;
 
 public class ExceptionFactory {
@@ -62,6 +63,10 @@ public class ExceptionFactory {
 		if (exceptionType.equals(ExceptionType.ES_DELETE_ITEM_WITH_CHILDREN_ERROR.name())
 				&& (arguments != null && arguments.size() > 0))
 			return new ESDeleteItemWithChildrenException(getKeysFromMap(arguments), getValuesFromMap(arguments));
+
+		if (exceptionType.equals(ExceptionType.ES_PARENT_NOT_EXIST_ERROR.name())
+				&& (arguments != null && arguments.size() > 0))
+			return new ESParentNotExistException(getValuesFromMap(arguments));
 
 		if (exceptionType.equals(ExceptionType.INTERNAL_EXCEPTION.name()) && (arguments == null))
 			return new InternalException(ExceptionType.INTERNAL_EXCEPTION);
