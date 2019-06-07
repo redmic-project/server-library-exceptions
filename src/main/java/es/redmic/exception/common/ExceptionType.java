@@ -75,6 +75,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	ES_QUERY_ERROR(Constants.ES_QUERY_ERROR),
 	ES_INSERT_DOCUMENT(Constants.ES_INSERT_DOCUMENT),
 	ES_CREATE_MAPPING_ERROR(Constants.ES_CREATE_MAPPING_ERROR),
+	ES_DELETE_ITEM_WITH_CHILDREN_ERROR(Constants.ES_DELETE_ITEM_WITH_CHILDREN_ERROR),
 	
 	// DTOs
 	DTO_NOT_VALID(Constants.DTO_NOT_VALID),
@@ -212,6 +213,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			ES_QUERY_ERROR = "ESQueryError",
 			ES_INSERT_DOCUMENT = "ESInsertError",
 			ES_CREATE_MAPPING_ERROR = "ESCreateMappingError",
+			ES_DELETE_ITEM_WITH_CHILDREN_ERROR = "ESDeleteItemWithChildrenError",
 			
 			// DTOs
 			DTO_NOT_VALID = "DTONotValidException",
