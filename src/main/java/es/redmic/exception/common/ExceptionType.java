@@ -103,6 +103,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	
 	INTERNAL_EXCEPTION(Constants.INTERNAL_EXCEPTION),
 	RESOURCE_NOT_FOUND(Constants.RESOURCE_NOT_FOUND),
+	URL_EXCEPTION(Constants.URL_EXCEPTION),
 	
 	// Data
 	DT_INCCORRECT_INTERVAL(Constants.DT_INCCORRECT_INTERVAL),
@@ -241,6 +242,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			
 			INTERNAL_EXCEPTION = "InternalException",
 			RESOURCE_NOT_FOUND = "ResourceNotFound",
+			URL_EXCEPTION = "URLException",
 			
 			// Data
 			DT_INCCORRECT_INTERVAL = "IncorrectInterval",
