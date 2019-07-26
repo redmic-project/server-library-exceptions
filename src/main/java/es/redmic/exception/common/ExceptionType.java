@@ -138,7 +138,9 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	
 	// Settings
 	
-	SELECTION_CHANGE_NOT_ALLOWED(Constants.SELECTION_CHANGE_NOT_ALLOWED);
+	SELECTION_CHANGE_NOT_ALLOWED(Constants.SELECTION_CHANGE_NOT_ALLOWED),
+	SETTINGS_TO_CLONE_NOT_FOUND_EXCEPTION(Constants.SETTINGS_TO_CLONE_NOT_FOUND_EXCEPTION),
+	SETTINGS_TO_SAVE_NOT_FOUND_EXCEPTION(Constants.SETTINGS_TO_SAVE_NOT_FOUND_EXCEPTION);
 	
 	// @formatter:on
 
@@ -281,8 +283,9 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			NO_CONTENT = "NoContentException",
 		
 			// Settings
-			SELECTION_CHANGE_NOT_ALLOWED = "SelectionChangeNotAllowedException";
-		
+			SELECTION_CHANGE_NOT_ALLOWED = "SelectionChangeNotAllowedException",
+			SETTINGS_TO_CLONE_NOT_FOUND_EXCEPTION = "SettingsToCloneNotFoundException",
+			SETTINGS_TO_SAVE_NOT_FOUND_EXCEPTION = "SettingsToSaveNotFoundException";
 		// @formatter:on
 	}
 
