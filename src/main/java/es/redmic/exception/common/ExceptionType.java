@@ -134,7 +134,11 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	
 	REPORT_ERROR(Constants.REPORT_ERROR),
 	
-	NO_CONTENT(Constants.NO_CONTENT);
+	NO_CONTENT(Constants.NO_CONTENT),
+	
+	// Settings
+	
+	SELECTION_CHANGE_NOT_ALLOWED(Constants.SELECTION_CHANGE_NOT_ALLOWED);
 	
 	// @formatter:on
 
@@ -274,7 +278,11 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			
 			REPORT_ERROR = "ReportError",
 		
-			NO_CONTENT = "NoContentException";
+			NO_CONTENT = "NoContentException",
+		
+			// Settings
+			SELECTION_CHANGE_NOT_ALLOWED = "SelectionChangeNotAllowedException";
+		
 		// @formatter:on
 	}
 
