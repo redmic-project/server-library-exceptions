@@ -75,6 +75,9 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	ES_QUERY_ERROR(Constants.ES_QUERY_ERROR),
 	ES_INSERT_DOCUMENT(Constants.ES_INSERT_DOCUMENT),
 	ES_CREATE_MAPPING_ERROR(Constants.ES_CREATE_MAPPING_ERROR),
+	ES_DELETE_ITEM_WITH_CHILDREN_ERROR(Constants.ES_DELETE_ITEM_WITH_CHILDREN_ERROR),
+	ES_DELETE_ITEM_REFERENCED_ERROR(Constants.ES_DELETE_ITEM_REFERENCED_ERROR),
+	ES_PARENT_NOT_EXIST_ERROR(Constants.ES_PARENT_NOT_EXIST_ERROR),
 	
 	// DTOs
 	DTO_NOT_VALID(Constants.DTO_NOT_VALID),
@@ -102,6 +105,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	
 	INTERNAL_EXCEPTION(Constants.INTERNAL_EXCEPTION),
 	RESOURCE_NOT_FOUND(Constants.RESOURCE_NOT_FOUND),
+	URL_EXCEPTION(Constants.URL_EXCEPTION),
 	
 	// Data
 	DT_INCCORRECT_INTERVAL(Constants.DT_INCCORRECT_INTERVAL),
@@ -131,7 +135,15 @@ public enum ExceptionType implements ExceptionTypeItfc {
 	
 	REPORT_ERROR(Constants.REPORT_ERROR),
 	
-	NO_CONTENT(Constants.NO_CONTENT);
+	NO_CONTENT(Constants.NO_CONTENT),
+	
+	// Settings
+	
+	SELECTION_CHANGE_NOT_ALLOWED(Constants.SELECTION_CHANGE_NOT_ALLOWED),
+	SETTINGS_TO_CLONE_NOT_FOUND_EXCEPTION(Constants.SETTINGS_TO_CLONE_NOT_FOUND_EXCEPTION),
+	SETTINGS_TO_SAVE_NOT_FOUND_EXCEPTION(Constants.SETTINGS_TO_SAVE_NOT_FOUND_EXCEPTION),
+	SETTINGS_CHANGE_FORBIDDEN(Constants.SETTINGS_CHANGE_FORBIDDEN_EXCEPTION),
+	DELETE_SETTINGS_NOT_ALLOWED(Constants.DELETE_SETTINGS_NOT_ALLOWED);
 	
 	// @formatter:on
 
@@ -212,6 +224,9 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			ES_QUERY_ERROR = "ESQueryError",
 			ES_INSERT_DOCUMENT = "ESInsertError",
 			ES_CREATE_MAPPING_ERROR = "ESCreateMappingError",
+			ES_DELETE_ITEM_WITH_CHILDREN_ERROR = "ESDeleteItemWithChildrenError",
+			ES_DELETE_ITEM_REFERENCED_ERROR="ESDeleteItemReferencedError",
+			ES_PARENT_NOT_EXIST_ERROR = "ESParentNotExistError",
 			
 			// DTOs
 			DTO_NOT_VALID = "DTONotValidException",
@@ -239,6 +254,7 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			
 			INTERNAL_EXCEPTION = "InternalException",
 			RESOURCE_NOT_FOUND = "ResourceNotFound",
+			URL_EXCEPTION = "URLException",
 			
 			// Data
 			DT_INCCORRECT_INTERVAL = "IncorrectInterval",
@@ -268,7 +284,14 @@ public enum ExceptionType implements ExceptionTypeItfc {
 			
 			REPORT_ERROR = "ReportError",
 		
-			NO_CONTENT = "NoContentException";
+			NO_CONTENT = "NoContentException",
+		
+			// Settings
+			SELECTION_CHANGE_NOT_ALLOWED = "SelectionChangeNotAllowedException",
+			SETTINGS_TO_CLONE_NOT_FOUND_EXCEPTION = "SettingsToCloneNotFoundException",
+			SETTINGS_TO_SAVE_NOT_FOUND_EXCEPTION = "SettingsToSaveNotFoundException",
+			SETTINGS_CHANGE_FORBIDDEN_EXCEPTION = "SettingsChangeForbiddenException",
+			DELETE_SETTINGS_NOT_ALLOWED = "DeleteSettingsNotAllowedException";
 		// @formatter:on
 	}
 
