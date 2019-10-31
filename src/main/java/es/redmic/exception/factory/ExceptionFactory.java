@@ -31,7 +31,9 @@ import es.redmic.exception.common.InternalException;
 import es.redmic.exception.data.DeleteItemException;
 import es.redmic.exception.data.ItemAlreadyExistException;
 import es.redmic.exception.data.ItemNotFoundException;
+import es.redmic.exception.elasticsearch.ESDeleteItemWithChildrenException;
 import es.redmic.exception.elasticsearch.ESInsertException;
+import es.redmic.exception.elasticsearch.ESParentNotExistException;
 import es.redmic.exception.elasticsearch.ESUpdateException;
 
 public class ExceptionFactory {
@@ -44,19 +46,27 @@ public class ExceptionFactory {
 			return new ItemAlreadyExistException();
 
 		if (exceptionType.equals(ExceptionType.ITEM_NOT_FOUND.name()) && (arguments != null && arguments.size() == 1))
-			// TODO: sacar errores del map
-			return new ItemNotFoundException("a", "b");
+			return new ItemNotFoundException(getKeysFromMap(arguments), getValuesFromMap(arguments));
 
 		if (exceptionType.equals(ExceptionType.DELETE_ITEM_EXCEPTION.name())
 				&& (arguments == null || arguments.size() == 0))
 			return new DeleteItemException();
 
 		if (exceptionType.equals(ExceptionType.ES_INSERT_DOCUMENT.name())
-				&& (arguments != null && arguments.size() == 4))
-			return new ESInsertException("a", "b");
+				&& (arguments != null && arguments.size() > 0))
+			return new ESInsertException(getKeysFromMap(arguments), getValuesFromMap(arguments));
 
-		if (exceptionType.equals(ExceptionType.ES_UPDATE_DOCUMENT.name()) && (arguments != null))
-			return new ESUpdateException("a");
+		if (exceptionType.equals(ExceptionType.ES_UPDATE_DOCUMENT.name())
+				&& (arguments != null && arguments.size() > 0))
+			return new ESUpdateException(getKeysFromMap(arguments));
+
+		if (exceptionType.equals(ExceptionType.ES_DELETE_ITEM_WITH_CHILDREN_ERROR.name())
+				&& (arguments != null && arguments.size() > 0))
+			return new ESDeleteItemWithChildrenException(getKeysFromMap(arguments), getValuesFromMap(arguments));
+
+		if (exceptionType.equals(ExceptionType.ES_PARENT_NOT_EXIST_ERROR.name())
+				&& (arguments != null && arguments.size() > 0))
+			return new ESParentNotExistException(getValuesFromMap(arguments));
 
 		if (exceptionType.equals(ExceptionType.INTERNAL_EXCEPTION.name()) && (arguments == null))
 			return new InternalException(ExceptionType.INTERNAL_EXCEPTION);
@@ -64,5 +74,16 @@ public class ExceptionFactory {
 		logger.error("No se ha encontrado una excepción válida para el tipo y argumentos recibidos");
 
 		return new InternalException(ExceptionType.INTERNAL_EXCEPTION);
+	}
+
+	// TODO: Construir argumentos del tipo [campo: valor (restricción que incumple)]
+	private static String getKeysFromMap(Map<String, String> arguments) {
+
+		return String.join(",", arguments.keySet());
+	}
+
+	private static String getValuesFromMap(Map<String, String> arguments) {
+
+		return String.join(",", arguments.values());
 	}
 }
